@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
-import logo from "../assets/logo.png"
+import Logo from "../Components/Logo";
 
 const Footer = () => {
   return (
-    <footer className="footer bg-[#03203C] text-white md:px-10 py-8 px-2">
+    <footer className="footer border-t-2 border-[#f3cde1] md:px-10 py-8 px-2">
       <div className="md:grid md:grid-cols-3">
         <div className="footer__section">
-          <img src={logo} alt="" className="max-h-24" />
+          <Logo />
           <div className="flex gap-5 text-xl mb-3">
             <Link to="https://www.facebook.com/digiwebagenci" target="_blank" className="footer__social-link">
               <FaFacebook />

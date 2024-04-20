@@ -2,13 +2,14 @@ import { useContext } from "react";
 import { useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
-import logo from "../assets/logo.png"
 import { AuthContext } from "../Providers/AuthProvider";
+import Logo from "../Components/Logo";
 
 
 const Navbar = () => {
   const [clicked, setClicked] = useState(false);
   const { night, setNight } = useContext(AuthContext);
+  
   
   const navOptions = (
     <>
@@ -32,20 +33,20 @@ const Navbar = () => {
   );
   return (
     <>
-      <nav className="max-[600px]:hidden flex items-center justify-between lg:px-16 px-8 bg-[#03203C] text-white">
+      <nav className="max-[600px]:hidden flex items-center justify-between lg:px-16 px-8 border-b-2 border-[#f3cde1]">
         <div className="flex items-center">
           <Link to="/" className="flex items-center">
-            <img src={logo} alt="sports fusion logo"  className="max-h-24"/>
+            <Logo />
           </Link>
         </div>
         <div className="flex items-center gap-4 text-lg">{navOptions}</div>
        
       </nav>
-      <nav className="min-[600px]:hidden bg-[#03203C] text-white">
+      <nav className="min-[600px]:hidden">
         <div className="flex justify-between items-center p-4">
           <FaBars onClick={() => setClicked(!clicked)} />
           <Link to="/">
-          <img src={logo} alt="sports fusion logo" className="h-12" />
+          <Logo />
           </Link>
         </div>
         <div
